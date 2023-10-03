@@ -1,0 +1,47 @@
+while True:
+
+    nome = str(input('Digite seu nome: ')).strip()
+    print()  # pular linha
+
+    print(f'1_Como foi digitado: {nome}')
+    print()  # pular linha
+
+    print(f'2_CAMEL CASE: {nome.title()}')
+    print()  # pular linha
+
+    print(f'3_Em maiúsculas: {nome.upper()}')
+    print()  # pular linha
+
+    print(f'4_Em minúsculas: {nome.lower()}')
+    print()  # pular linha
+
+    # Sub-rotina de comando para eliminar a contagem de espaços no meio
+    print('5_Ao todo o nome tem {} letras. '.format(len(nome) - nome.count(' ')))    
+    print()  # pular linha
+
+    # forma 1 de contas as letras do primeiro nome
+    print('6_O seu primeiro nome tem {} letras (forma de contagem 1)'.format(nome.find(' ')))    
+    print()  # pular linha
+
+    # forma 2 e mais completa de manipular a ‘string’
+    separa = nome.split()
+    print('Seu primeiro nome é {} e tem {} letras'.format(separa[0], len(separa[0])))    
+    print()  # pular linha  
+
+    print('=' * 70)
+    resp = ' '
+    while resp not in 'SN':  # Estrutura de repetição "Enquanto"
+        resp = str(input('CONTINUE? [S/N]')).strip().upper()[
+            0]  # Elimina espaços andes e depois da cadeia/ Passa caracteres da cadeia para miúsculas
+        print()  # pular linha
+
+        if resp not in 'SN':  # Estrutura condicional "se"
+            print('Opção Invalida')
+            print()  # pular linha            
+
+    if resp == 'N':
+        break  # ‘flag’ de parada da estrutura de repetição
+
+print()  # pular linha
+print('-' * 70)
+print(f"{'FIM' : >70}")
